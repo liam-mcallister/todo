@@ -6,14 +6,14 @@
   padding: 0;
 }
 
-/*------------------------------Header Component----*/
-.header {
+/*---------------------Header Section  Component----*/
+.header-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 300px;
+  width: 100%;
+  padding: 2rem 1rem;
   background: #0EC466;
   color: #ffffff;
 }
@@ -22,20 +22,67 @@ h1 {
   margin-bottom: 2rem;
 }
 
-/*------------------------------Search Component----*/
-input {
-  height: 2rem;
-  border: none;
+/*-----------------------------AddTask Component----*/
+.add-task {
+  width: 100%;
+  max-width: 800px;
 }
 
-.search {
+.addtask {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
   padding: 0 0.5rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 0.3rem;
 }
 
-.button {
-  padding: 0 1rem;
+.addtask:focus {
+  border: solid 3px #04778b;
+}
+
+/*----------------------Filter Section Component----*/
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  background: #93ecbe;
+}
+
+/*------------------------Filter Tasks Component----*/
+.filter-tasks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+/*-----------------------Tasks Section Component----*/
+
+/*--------------------------------Task Component----*/
+
+/*---------------------------------------Buttons----*/
+.btn {
+  height: 3rem;
   cursor: pointer;
   font-weight: 700;
+  border: none;
+  border-radius: 0.3rem;
   background: #125733;
   color: #ffffff;
+}
+
+.btn:hover {
+  background: #04778b;
+}
+
+.btn-add {
+  width: 100%;
+}
+
+.btn-filter {
+  width: 31%;
 }
