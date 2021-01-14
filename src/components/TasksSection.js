@@ -3,8 +3,10 @@ import Task from "./Task";
 
 const TasksSection = () => {
   return (
-    <div>
-      <Task />
+    <div className="task-container">
+      <ul className="task-list">
+        <Task name="lorem" />
+      </ul>
     </div>
   );
 };
