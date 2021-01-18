@@ -5,7 +5,8 @@ const TasksSection = () => {
   return (
     <div className="task-container">
       <ul className="task-list">
-        <Task name="lorem" />
+        <Task id="todo-one" name="lorem" completed={true} />
+        <Task id="todo-two" name="ipsum" completed={false} />
       </ul>
     </div>
   );

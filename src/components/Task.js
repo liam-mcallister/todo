@@ -4,15 +4,16 @@ const Task = (props) => {
   return (
     <li className="task">
       <div className="task-top">
-        <label htmlFor="checkbox" className="task-check">
-          <input id="checkbox" className="checkbox" type="checkbox" />
+        <label htmlFor={props.id} className="task-check">
+          <input
+            id={props.id}
+            className="checkbox"
+            type="checkbox"
+            defaultChecked={props.completed}
+          />
           <span class="checkmark"></span>
         </label>
-        <p className="task-text">
-          lorsssssssem lorem loem lossssrem losrem loremsssss lem lorssem lem
-          lorem lorem lorssem lorems lormss lorem lorem em lrem lorssem lorem
-          rem lorem lorsem lorem lom lorem em
-        </p>
+        <p className="task-text">{props.name}</p>
       </div>
       <div className="task-bottom">
         <input className="btn btn-task btn-edit" type="button" value="Edit" />
