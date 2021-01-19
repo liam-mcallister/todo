@@ -11,7 +11,7 @@ const Task = (props) => {
             type="checkbox"
             defaultChecked={props.completed}
           />
-          <span class="checkmark"></span>
+          <span className="checkmark"></span>
         </label>
         <p className="task-text">{props.name}</p>
       </div>
