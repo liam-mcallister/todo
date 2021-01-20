@@ -10,6 +10,7 @@ const Task = (props) => {
             className="checkbox"
             type="checkbox"
             defaultChecked={props.completed}
+            onChange={() => props.toggleTaskCompleted(props.id)}
           />
           <span className="checkmark"></span>
         </label>
@@ -21,6 +22,7 @@ const Task = (props) => {
           className="btn btn-task btn-delete"
           type="button"
           value="Delete"
+          onClick={() => props.deleteTask(props.id)}
         />
       </div>
     </li>
