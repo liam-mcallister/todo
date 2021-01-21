@@ -1,179 +1,206 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /*-------------------------------------Container----*/
 .container {
-  max-width: 800px;
-  margin: auto;
-  border-radius: 0.5rem;
-  background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+    max-width: 800px;
+    margin: auto;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
 }
 
-/*----------------------Header Section Component----*/
+/*----------------------Header Section----*/
 .header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem 1rem;
-  border-radius: 0.5rem;
-  background:transparent;
-  color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #ffffff;
 }
 
 h1 {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 /*-----------------------------AddTask Component----*/
 .add-task {
-  width: 100%;
-  max-width: 800px;
+    width: 100%;
+    max-width: 800px;
 }
 
-.addtask {
-  width: 100%;
-  height: 3rem;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
-  font-size: 18px;
-  border: 1px solid #121212;
-  border-radius: 0.3rem;
-  background: transparent;
-}
-
-.addtask:focus {
-  border: solid 3px #121212;
-}
-
-/*----------------------Filter Section Component----*/
+/*----------------------Filter Section----*/
 .filter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem 1rem;
-  background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    background: transparent;
 }
 
 /*------------------------Filter Tasks Component----*/
 .filter-tasks {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
 }
 
-/*-----------------------Tasks Section Component----*/
+/*-----------------------Tasks Section----*/
 .task-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
 }
 
 /*--------------------------------Task Component----*/
 .task-list {
-  width: 100%;
-  max-width: 800px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .task {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.418);
-  list-style: none;
-  background: #ffffff;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.418);
+    list-style: none;
+    background: #ffffff;
 }
 
 .task-top {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task-top-edit {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.editLabel {
+    margin-bottom: 1rem;
 }
 
 .task-check {
-  position: relative;
-  margin-right: 1.5rem;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    position: relative;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .checkbox {
-  opacity: 0;
+    opacity: 0;
 }
 
-.checkbox:checked~.checkmark {
-  background: #d43f8d;
+.checkbox:checked ~ .checkmark {
+    background: #d43f8d;
 }
 
 .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  border-radius: 0.25rem;
-  background: #a7a7a7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 0.25rem;
+    background: #a7a7a7;
 }
 
 .task-text {
-  display: inline;
-  font-size: 20px;
+    display: inline;
+    font-size: 20px;
 }
 
 .task-bottom {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 /*---------------------------------------Buttons----*/
 .btn {
-  height: 3rem;
-  cursor: pointer;
-  font-weight: 700;
-  border: none;
-  border-radius: 0.3rem;
-  background: #1f1f1f;
-  color: #ffffff;
+    height: 3rem;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.3rem;
+    background: #1f1f1f;
+    color: #ffffff;
 }
 
 .btn-add {
-  width: 100%;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .btn-filter {
-  width: 31%;
+    width: 31%;
 }
 
 .btn-task {
-  width: 48%;
+    width: 48%;
 }
 
 .btn-edit {
-  background: #04778b;
+    background: #04778b;
 }
 
 .btn-edit:hover {
-  background: #03515f;
+    background: #03515f;
 }
 
 .btn-delete {
-  background: #e42b2b;
+    background: #e42b2b;
 }
 
 .btn-delete:hover {
-  background: #b61b1b;
+    background: #b61b1b;
+}
+
+.btn-cancel {
+    background: #5e5e5e;
+}
+
+.btn-cancel:hover {
+    background: #4b4b4b;
+}
+
+.btn-save {
+    background: #208812;
+}
+
+.btn-save:hover {
+    background: #165e0c;
+}
+
+/*----------------------------------------Inputs----*/
+input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    padding: 0 0.5rem;
+    font-size: 18px;
+    border: 1px solid #121212;
+    border-radius: 0.3rem;
+    background: transparent;
+}
+
+input[type="text"]:focus {
+    border: solid 3px #121212;
 }

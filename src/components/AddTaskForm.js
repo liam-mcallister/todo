@@ -20,7 +20,7 @@ const AddTaskForm = (props) => {
   return (
     <div className="add-task">
       <form onSubmit={handleSubmit}>
-        <input className="addtask" type="text" autoComplete="off" value={name} onChange={handleChange} />
+        <input type="text" autoComplete="off" value={name} onChange={handleChange} />
         <input className="btn btn-add" type="submit" value="Do it" />
       </form>
     </div>
