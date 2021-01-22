@@ -8,6 +8,29 @@ import { nanoid } from "nanoid";
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
+  // Function to add a task to the list
+  const addTask = (name) => {
+    const newTask = { id: "todo" + nanoid(), name: name, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  // Function to edit a task
+  const editTask = (id, newName) => {
+    const editedTaskList = tasks.map((task) => {
+      if (id === task.id) {
+        return { ...task, name: newName };
+      }
+      return task;
+    });
+    setTasks(editedTaskList);
+  };
+
+  // Function to delete a task from the list
+  const deleteTask = (id) => {
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
+  };
+
   const toggleTaskCompleted = (id) => {
     const updatedTasks = tasks.map((task) => {
       if (id === task.id) {
@@ -17,21 +40,6 @@ function App(props) {
       }
     });
     setTasks(updatedTasks);
-  };
-
-  const editTask = (id, newName) => {
-    const editedTaskList = tasks.map((task) => {
-      if (id === task.id) {
-        return { ...task, name: newName };
-      }
-      return task;
-    });
-    setTasks(editedTaskList);
-  }
-
-  const deleteTask = (id) => {
-    const remainingTasks = tasks.filter((task) => id !== task.id);
-    setTasks(remainingTasks);
   };
 
   const tasklist = tasks.map((task) => (
@@ -46,15 +54,10 @@ function App(props) {
     />
   ));
 
-  const addTask = (name) => {
-    const newTask = { id: "todo" + nanoid(), name: name, completed: false };
-    setTasks([...tasks, newTask]);
-  };
-
   return (
     <div className="container">
       <div className="header-container">
-        <h1>Todo List</h1>
+        <h1>Task Tracker</h1>
         <AddTaskForm addTask={addTask} />
       </div>
 

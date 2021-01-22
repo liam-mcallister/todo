@@ -82,6 +82,7 @@ h1 {
 }
 
 .task-top {
+    position: relative;
     margin-bottom: 1rem;
 }
 
@@ -96,8 +97,7 @@ h1 {
 }
 
 .task-check {
-    position: relative;
-    margin-right: 1.5rem;
+    position: absolute;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -126,6 +126,8 @@ h1 {
 
 .task-text {
     display: inline;
+    margin-left: 2rem;
+    word-wrap: break-word;
     font-size: 20px;
 }
 

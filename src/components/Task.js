@@ -2,16 +2,44 @@ import React, { useState } from "react";
 
 const Task = (props) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [newName, setNewName] = useState("");
+
+  const handleChange = (e) => {
+    setNewName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newName === "") {
+      alert("Enter a task!");
+    } else {
+      props.editTask(props.id, newName);
+      setNewName("");
+      setIsEditing(false);
+    }
+  };
 
   const editTemplate = (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="task-top-edit">
-          <label htmlFor={props.id} className="editLabel">Edit your task</label>
-          <input id={props.id} type="text" />
+          <label htmlFor={props.id} className="editLabel">
+            Edit your task
+          </label>
+          <input
+            id={props.id}
+            type="text"
+            value={newName}
+            onChange={handleChange}
+          />
         </div>
         <div className="task-bottom">
-          <input className="btn btn-task btn-cancel" type="button" value="Cancel" onClick={() => setIsEditing(false)} />
+          <input
+            className="btn btn-task btn-cancel"
+            type="button"
+            value="Cancel"
+            onClick={() => setIsEditing(false)}
+          />
           <input className="btn btn-task btn-save" type="submit" value="Save" />
         </div>
       </form>
@@ -34,7 +62,12 @@ const Task = (props) => {
         <p className="task-text">{props.name}</p>
       </div>
       <div className="task-bottom">
-        <input className="btn btn-task btn-edit" type="button" value="Edit" onClick={() => setIsEditing(true)} />
+        <input
+          className="btn btn-task btn-edit"
+          type="button"
+          value="Edit"
+          onClick={() => setIsEditing(true)}
+        />
         <input
           className="btn btn-task btn-delete"
           type="button"
@@ -45,9 +78,7 @@ const Task = (props) => {
     </>
   );
 
-  return (
-    <li className="task">{isEditing ? editTemplate : viewTemplate}</li>
-  );
+  return <li className="task">{isEditing ? editTemplate : viewTemplate}</li>;
 };
 
 export default Task;
