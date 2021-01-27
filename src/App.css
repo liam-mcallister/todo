@@ -8,7 +8,7 @@
 
 /*-------------------------------------Container----*/
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
     border-radius: 0.5rem;
     background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
@@ -147,6 +147,10 @@ h1 {
     color: #ffffff;
 }
 
+.btn:hover {
+    background: #474747;
+}
+
 .btn-add {
     width: 100%;
     margin-top: 1rem;
@@ -154,6 +158,10 @@ h1 {
 
 .btn-filter {
     width: 31%;
+}
+
+.btn-filter[aria-pressed="true"] {
+    background-color: #42dca3;
 }
 
 .btn-task {
@@ -205,4 +213,8 @@ input[type="text"] {
 
 input[type="text"]:focus {
     border: solid 3px #121212;
+}
+
+input:focus {
+    outline: none;
 }

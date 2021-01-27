@@ -5,8 +5,17 @@ import Task from "./components/Task";
 import "./App.css";
 import { nanoid } from "nanoid";
 
+const FILTER_MAP = {
+  All: () => true,
+  Active: (task) => !task.completed,
+  Finished: (task) => task.completed
+};
+
+const FILTER_NAMES = Object.keys(FILTER_MAP);
+
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
+  const [filter, setFilter] = useState('All');
 
   // Function to add a task to the list
   const addTask = (name) => {
@@ -42,15 +51,26 @@ function App(props) {
     setTasks(updatedTasks);
   };
 
-  const tasklist = tasks.map((task) => (
-    <Task
-      id={task.id}
-      name={task.name}
-      completed={task.completed}
-      key={task.id}
-      toggleTaskCompleted={toggleTaskCompleted}
-      editTask={editTask}
-      deleteTask={deleteTask}
+  const tasklist = tasks
+    .filter(FILTER_MAP[filter])
+    .map((task) => (
+      <Task
+        id={task.id}
+        name={task.name}
+        completed={task.completed}
+        key={task.id}
+        toggleTaskCompleted={toggleTaskCompleted}
+        editTask={editTask}
+        deleteTask={deleteTask}
+      />
+    ));
+
+  const filterList = FILTER_NAMES.map((name) => (
+    <FilterTasks
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
     />
   ));
 
@@ -62,11 +82,15 @@ function App(props) {
       </div>
 
       <div className="filter-container">
-        <FilterTasks />
+        <div className="filter-tasks">
+          {filterList}
+        </div>
       </div>
 
       <div className="task-container">
-        <ul className="task-list">{tasklist}</ul>
+        <ul className="task-list">
+          {tasklist}
+        </ul>
       </div>
     </div>
   );

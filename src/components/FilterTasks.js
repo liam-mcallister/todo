@@ -1,12 +1,14 @@
 import React from "react";
 
-const FilterTasks = () => {
+const FilterTasks = (props) => {
   return (
-    <div className="filter-tasks">
-      <input className="btn btn-filter" type="button" value="All" />
-      <input className="btn btn-filter" type="button" value="Active" />
-      <input className="btn btn-filter" type="button" value="Finished" />
-    </div>
+    <input
+      className="btn btn-filter"
+      type="button"
+      value={props.name}
+      aria-pressed={props.isPressed}
+      onClick={() => props.setFilter(props.name)}
+    />
   );
 };
 
