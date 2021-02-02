@@ -28,7 +28,9 @@ const Task = (props) => {
           </label>
           <input
             id={props.id}
+            className="edit-task"
             type="text"
+            autoComplete="off"
             value={newName}
             onChange={handleChange}
           />
@@ -78,6 +80,7 @@ const Task = (props) => {
     </>
   );
 
+  // If isEditing is true then render the editTemplate, otherwise render the viewTemplate
   return <li className="task">{isEditing ? editTemplate : viewTemplate}</li>;
 };
 

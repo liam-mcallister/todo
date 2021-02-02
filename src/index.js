@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Placeholder tasks passed down to App.js via props
 const DATA = [
-  { id: "todo-0", name: "lorem", completed: true },
-  { id: "todo-1", name: "ipsum", completed: false }
+  { id: "todo-0", name: "Pickup groceries", completed: true },
+  { id: "todo-1", name: "Wash car", completed: false }
 ];
 
 ReactDOM.render(
