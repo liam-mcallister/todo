@@ -70,6 +70,7 @@ const Task = (props) => {
           value="Edit"
           onClick={() => setIsEditing(true)}
         />
+        {/*Fires the deleteTask function which is passed down via props*/}
         <input
           className="btn btn-task btn-delete"
           type="button"

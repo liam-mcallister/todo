@@ -33,6 +33,7 @@ function App(props) {
   };
 
   // Function to edit a task
+  // 
   const editTask = (id, newName) => {
     const editedTaskList = tasks.map((task) => {
       if (id === task.id) {
@@ -44,6 +45,9 @@ function App(props) {
   };
 
   // Function to delete a task from the list
+  // Gets fired from clicking the delete button on a task
+  // Creates a new array by filtering the tasks array and returning the remaining tasks whose id does not match the deleted one
+  // Fires the setTasks function to update the tasks state by passing in the new remainingTasks array
   const deleteTask = (id) => {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
