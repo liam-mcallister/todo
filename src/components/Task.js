@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 
 const Task = (props) => {
+  // Creates a isEditing state that is set to false
   const [isEditing, setIsEditing] = useState(false);
+  // Creates a newName state with an empty string value
   const [newName, setNewName] = useState("");
 
+  // Fired everytime the user types into the edit task input field
+  // It stores the value of the input field in the newName state via the setNewName updater function
   const handleChange = (e) => {
     setNewName(e.target.value);
   };
 
+  // Fired when the save button is clicked
+  // If there has been nothing entered an alert will display
+  // Otherwise the editTask callback function is called from props (id and newName is passed in)
+  // + the newName state is set to an empty string
+  // + the isEditing state is set to false
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newName === "") {
@@ -36,6 +45,7 @@ const Task = (props) => {
           />
         </div>
         <div className="task-bottom">
+          {/*Fires an annonymous function that sets the setIsEditing state to false*/}
           <input
             className="btn btn-task btn-cancel"
             type="button"
@@ -64,13 +74,14 @@ const Task = (props) => {
         <p className="task-text">{props.name}</p>
       </div>
       <div className="task-bottom">
+        {/*Fires an annonymous function that sets the setIsEditing state to true*/}
         <input
           className="btn btn-task btn-edit"
           type="button"
           value="Edit"
           onClick={() => setIsEditing(true)}
         />
-        {/*Fires the deleteTask function which is passed down via props*/}
+        {/*Fires an annonymous function that fires the deleteTask callback function which is passed down via props*/}
         <input
           className="btn btn-task btn-delete"
           type="button"
