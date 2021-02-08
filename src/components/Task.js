@@ -45,7 +45,7 @@ const Task = (props) => {
           />
         </div>
         <div className="task-bottom">
-          {/*Fires an annonymous function that sets the setIsEditing state to false*/}
+          {/*Fires an anonymous function that sets the setIsEditing state to false*/}
           <input
             className="btn btn-task btn-cancel"
             type="button"
@@ -74,14 +74,14 @@ const Task = (props) => {
         <p className="task-text">{props.name}</p>
       </div>
       <div className="task-bottom">
-        {/*Fires an annonymous function that sets the setIsEditing state to true*/}
+        {/*Fires an anonymous function that sets the setIsEditing state to true*/}
         <input
           className="btn btn-task btn-edit"
           type="button"
           value="Edit"
           onClick={() => setIsEditing(true)}
         />
-        {/*Fires an annonymous function that fires the deleteTask callback function which is passed down via props*/}
+        {/*Fires an anonymous function that fires the deleteTask callback function which is passed down via props*/}
         <input
           className="btn btn-task btn-delete"
           type="button"
