@@ -25,7 +25,8 @@ function App(props) {
   const [filter, setFilter] = useState('All');
 
   // Callback function to add a task to the list
-  // Creates a newTask object with a unique id (nanoid plugin), a name using the add task input and a false completed value
+  // Creates a newTask object with a unique id (nanoid plugin)
+  // + a name using the add task input and a false completed value
   // Fires the setTasks function which adds the newTask to the tasks array and updates the state
   const addTask = (name) => {
     const newTask = { id: "todo" + nanoid(), name: name, completed: false };
@@ -33,7 +34,12 @@ function App(props) {
   };
 
   // Function to edit a task
-  // 
+  // Gets fired from clicking the save button when editing a task
+  // Creates a new array by mapping through the list of tasks
+  // + if the targets id matches an id in the task list
+  // + then returns the tasks with the edited tasks new name
+  // Otherwise the tasks are returned unchanged
+  // The tasks state is updated with the editedTasksList
   const editTask = (id, newName) => {
     const editedTaskList = tasks.map((task) => {
       if (id === task.id) {
@@ -46,7 +52,8 @@ function App(props) {
 
   // Function to delete a task from the list
   // Gets fired from clicking the delete button on a task
-  // Creates a new array by filtering the tasks array and returning the remaining tasks whose id does not match the deleted one
+  // Creates a new array by filtering the tasks array and returning the remaining tasks
+  // + whose id does not match the deleted one
   // Fires the setTasks function to update the tasks state by passing in the new remainingTasks array
   const deleteTask = (id) => {
     const remainingTasks = tasks.filter((task) => id !== task.id);
