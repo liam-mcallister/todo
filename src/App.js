@@ -12,7 +12,7 @@ import { nanoid } from "nanoid";
 const FILTER_MAP = {
   All: () => true,
   Active: (task) => !task.completed,
-  Finished: (task) => task.completed
+  Finished: (task) => task.completed,
 };
 
 // Creates an array of FILTER_MAP keys (All, Active and Finished)
@@ -22,7 +22,7 @@ function App(props) {
   // Creates a tasks state that takes the placeholder tasks from index.js via props
   const [tasks, setTasks] = useState(props.tasks);
   // Creates a filter state with a string value of 'All'
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
 
   // Callback function to add a task to the list
   // Creates a newTask object with a unique id (nanoid plugin)
@@ -60,6 +60,12 @@ function App(props) {
     setTasks(remainingTasks);
   };
 
+  // Function that updates the toggle value of a task in state
+  // Creates a new array by mapping through the list of tasks
+  // + if the targets id matches an id in the task list
+  // + then returns the tasks and updates the target tasks inverted completed value
+  // Otherwise the tasks are returned unchanged
+  // The tasks state is updated with the updatedTasks
   const toggleTaskCompleted = (id) => {
     const updatedTasks = tasks.map((task) => {
       if (id === task.id) {
@@ -71,9 +77,11 @@ function App(props) {
     setTasks(updatedTasks);
   };
 
+  // The tasks list gets filtered based on the value of FILTER_MAP
+  // + the corresponding function is fired (see line 8)
   // Maps through the list of tasks and creates a Task component for each one
   // Passes each Task an id, name, completed and key attribute
-  // toggleTaskCompleted, editTask and deleteTask functions are passed down to FilterTasks.js via props
+  // toggleTaskCompleted, editTask and deleteTask functions are passed via props
   const tasklist = tasks
     .filter(FILTER_MAP[filter])
     .map((task) => (
@@ -88,6 +96,7 @@ function App(props) {
       />
     ));
 
+  // Maps through the FILTER_NAMES array and creates three FilterTasks components
   const filterList = FILTER_NAMES.map((name) => (
     <FilterTasks
       key={name}
