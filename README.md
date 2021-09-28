@@ -12,6 +12,8 @@
 
 A React app that allows users to add, modify, delete and filter tasks.
 
+![Todo Screenshot](https://user-images.githubusercontent.com/49287478/135106623-0d2743a4-eff8-411e-9ae8-b0f1f0e2f922.png)
+
 ## 2. Tech
 
 This website uses the following technologies:
